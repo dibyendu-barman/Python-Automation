@@ -1,5 +1,5 @@
 device,test,value,result
-ESP32,Voltage,3.31,PASS
+ESP32,Voltage,3.31,FAIL
 ESP32,Current,0.42,PASS
 ESP32,Temperature,52.0,FAIL
 ESP32,Communication,1,PASS
