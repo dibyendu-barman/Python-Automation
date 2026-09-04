@@ -1,0 +1,28 @@
+{
+    "devices": [
+        {
+            "name": "ESP32",
+            "tests": {
+                "voltage": "PASS",
+                "uart": "PASS",
+                "temp": "FAIL"
+            }
+        },
+        {
+            "name": "STM32",
+            "tests": {
+                "voltage": "PASS",
+                "uart": "PASS",
+                "temp": "PASS"
+            }
+        },
+        {
+            "name": "PIC16F877A",
+            "tests": {
+                "voltage": "FAIL",
+                "uart": "PASS",
+                "temp": "PASS"
+            }
+        }
+    ]
+}
