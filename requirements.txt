@@ -5,3 +5,10 @@ py --version
 python -m pip --version
 python -m pip install --upgrade pip
 where.exe python
+
+git fetch origin
+git log --oneline --graph --all --decorate -10
+
+git pull origin main --allow-unrelated-histories
+
+git push -u origin main
