@@ -1,0 +1,14 @@
+{
+    "device": "ESP32",
+    "interface": "UART",
+    "limits": {
+        "voltage_min": 3.2,
+        "voltage_max": 3.4,
+        "temperature_max": 45
+    },
+    "tests": [
+        "voltage",
+        "temperature",
+        "communication"
+    ]
+}
