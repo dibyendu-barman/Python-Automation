@@ -1,0 +1,4 @@
+device,test,result,value
+ESP32,Voltage,PASS,3.31
+ESP32,Current,PASS,0.42
+ESP32,Temperature,FAIL,52.0
