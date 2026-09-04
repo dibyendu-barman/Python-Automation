@@ -11,7 +11,7 @@ with open("data/results.csv", "w", newline="") as file:
  writer.writeheader()
  writer.writerows([
  {"device":"ESP32","test":"Voltage","result":"PASS","value":"3.31"},
- {"device":"ESP32","test":"Current","result":"PASS","value":"0.42"},
+ {"device":"ESP32","test":"Current","result":"FAIL","value":"0.42"},
  {"device":"ESP32","test":"Temperature","result":"FAIL","value":"52.0"},
  ])
 
