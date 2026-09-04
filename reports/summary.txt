@@ -1,5 +1,0 @@
-TEST REPORT
------------
-Total : 4
-Passed: 3
-Failed: 1
