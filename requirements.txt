@@ -6,32 +6,900 @@ python -m pip --version
 python -m pip install --upgrade pip
 where.exe python
 
-git config --global user.email "dibyendubarman96@gmail.com"
-git config --global user.name "Dibyendu Barman"
+GIT COMMANDS CHEAT SHEET — PYTHON AUTOMATION PROJECT
+=========================================================
 
-git commit -m "Initial Python automation environment"
+Repository:
+https://github.com/dibyendu-barman/Python-Automation.git
+
+This guide contains the important Git commands for managing a Python
+project with Git and GitHub.
+
+
+1. FIRST-TIME GIT REPOSITORY SETUP
+----------------------------------
+
+Initialize Git in the project folder:
+
+git init
+
+Connect the local repository to GitHub:
+
 git remote add origin https://github.com/dibyendu-barman/Python-Automation.git
-git config --global init.defaultBranch main
-git config --global init.defaultBranch
-git config --global core.autocrlf true 
-git config --global color.ui auto
+
+Check the remote:
+
+git remote -v
+
+Rename the current branch to main:
+
+git branch -M main
+
+Stage all project files:
+
+git add .
+
+Create the first commit:
+
+git commit -m "Initial commit"
+
+Push the main branch to GitHub for the first time:
+
+git push -u origin main
+
+
+2. IF THE GITHUB REPOSITORY ALREADY HAS FILES
+---------------------------------------------
+
+For example, GitHub already contains README.md or other files.
+
+Initialize Git:
+
+git init
+
+Add GitHub as remote:
+
+git remote add origin https://github.com/dibyendu-barman/Python-Automation.git
+
+Rename branch:
+
+git branch -M main
+
+Download remote history:
+
+git fetch origin
+
+View recent history:
+
+git log --oneline --graph --all --decorate -10
+
+Merge GitHub's main branch into the local repository:
+
+git pull origin main --allow-unrelated-histories
+
+Check the repository status:
+
+git status
+
+
+3. RESOLVING A MERGE CONFLICT
+-----------------------------
+
+Check which files have conflicts:
+
+git status
+
+Open the conflicted files and manually fix the conflict.
+
+After fixing the files:
+
+git add .
+
+Commit the resolved changes:
+
+git commit -m "Resolve merge conflict"
+
+Push the result:
+
+git push -u origin main
+
+
+4. NORMAL DAILY GIT WORKFLOW
+----------------------------
+
+Before starting work, get the latest GitHub changes:
+
+git pull
+
+Work on your Python files.
+
+Check what changed:
+
+git status
+
+Stage all changes:
+
+git add .
+
+Create a commit:
+
+git commit -m "Add new automation script"
+
+Push changes to GitHub:
+
+git push
+
+Recommended daily workflow:
+
+git pull
+git status
+git add .
+git commit -m "Describe the changes"
+git push
+
+
+5. CHECK REPOSITORY STATUS
+--------------------------
+
+Show modified, deleted, untracked and staged files:
+
+git status
+
+
+6. ADD FILES
+------------
+
+Add all files:
+
+git add .
+
+Add one specific file:
+
+git add filename.py
+
+Add multiple files:
+
+git add file1.py file2.py
+
+
+7. COMMIT CHANGES
+-----------------
+
+Create a commit:
+
+git commit -m "Update automation script"
+
+Examples:
+
+git commit -m "Add file organizer automation"
+git commit -m "Add Excel automation"
+git commit -m "Fix PDF automation"
+git commit -m "Update README"
+git commit -m "Update gitignore"
+
+
+8. VIEW COMMIT HISTORY
+----------------------
+
+Show complete commit history:
+
+git log
+
+Show compact commit history:
+
+git log --oneline
+
+Show the last 10 commits:
+
+git log --oneline -10
+
+Show history as a graph:
+
+git log --oneline --graph --all --decorate -10
+
+
+9. BRANCH COMMANDS
+------------------
+
+Show local branches:
+
+git branch
+
+Create a new branch:
+
+git branch feature-name
+
+Create and switch to a new branch:
+
+git switch -c feature-name
+
+Switch to an existing branch:
+
+git switch main
+
+Delete a local branch:
+
+git branch -d feature-name
+
+Show all branches:
+
+git branch -a
+
+
+10. FETCH AND PULL
+------------------
+
+Download information from GitHub without merging:
+
+git fetch origin
+
+View remote branches:
+
+git branch -r
+
+Pull the latest changes:
+
+git pull
+
+Pull specifically from main:
+
+git pull origin main
+
+
+IMPORTANT DIFFERENCE:
+
+git fetch
+    Downloads remote changes but does not merge them.
+
+git pull
+    Downloads remote changes and merges/rebases them into the current branch
+    depending on configuration and command used.
+
+
+11. PUSH COMMANDS
+-----------------
+
+First push of a new main branch:
+
+git push -u origin main
+
+After upstream is configured:
+
+git push
+
+Push a specific branch:
+
+git push -u origin branch-name
+
+
+12. CLONE AN EXISTING PROJECT
+-----------------------------
+
+Clone the GitHub repository:
+
+git clone https://github.com/dibyendu-barman/Python-Automation.git
+
+Enter the project folder:
+
+cd Python-Automation
+
+Check status:
+
+git status
+
+Pull latest changes:
+
+git pull
+
+
+13. CHECK REMOTE REPOSITORY
+---------------------------
+
+Show configured remote repositories:
+
+git remote -v
+
+Show detailed remote information:
+
+git remote show origin
+
+
+14. CHANGE REMOTE URL
+---------------------
+
+Change the GitHub remote URL:
+
+git remote set-url origin https://github.com/dibyendu-barman/Python-Automation.git
+
+Remove the remote:
+
+git remote remove origin
+
+Add it again if required:
+
+git remote add origin https://github.com/dibyendu-barman/Python-Automation.git
+
+
+15. VIEW CHANGES BEFORE COMMITTING
+----------------------------------
+
+Show unstaged changes:
+
+git diff
+
+Show staged changes:
+
+git diff --staged
+
+Check overall status:
+
+git status
+
+
+16. UNDO UNCOMMITTED CHANGES
+----------------------------
+
+Restore one file to its last committed state:
+
+git restore filename.py
+
+Restore all uncommitted working-tree changes:
+
+git restore .
+
+WARNING:
+git restore can permanently remove uncommitted changes.
+
+
+17. UNSTAGE A FILE
+------------------
+
+If a file was added using git add but should not be committed yet:
+
+git restore --staged filename.py
+
+Unstage all staged files:
+
+git restore --staged .
+
+
+18. REMOVE FILES FROM THE REPOSITORY
+------------------------------------
+
+Remove a file from the working directory and Git:
+
+git rm filename.py
+
+Commit the removal:
+
+git commit -m "Remove unused script"
+
+Push:
+
+git push
+
+
+19. .GITIGNORE FOR PYTHON PROJECTS
+----------------------------------
+
+A typical Python .gitignore can contain:
+
+__pycache__/
+*.pyc
+.venv/
+venv/
+env/
+.env
+*.log
+.vscode/
+.idea/
+.pytest_cache/
+.mypy_cache/
+dist/
+build/
+*.egg-info/
+
+Create or edit:
+
+.gitignore
+
+Then stage it:
+
+git add .gitignore
+
+Commit it:
+
+git commit -m "Update gitignore"
+
+Push it:
+
+git push
+
+
+20. IF AN IGNORED FILE WAS ALREADY TRACKED
+------------------------------------------
+
+Adding a file to .gitignore does not automatically remove it from Git
+if it was already tracked.
+
+Remove a directory from Git tracking but keep it locally:
+
+git rm -r --cached folder_name
+
+For example:
+
+git rm -r --cached .venv
+
+Then:
+
+git add .gitignore
+
+git commit -m "Remove ignored files"
+
+git push
+
+
+21. FIXING A PUSH REJECTION
+---------------------------
+
+If GitHub has newer commits and push is rejected:
+
+git pull --rebase origin main
+
+Then:
+
+git push
+
+If a conflict occurs:
+
+git status
+
+Fix the conflicted files.
+
+Stage the resolved files:
+
+git add .
+
+Continue the rebase:
+
+git rebase --continue
+
+Then push:
+
+git push
+
+
+22. CANCEL A REBASE
+-------------------
+
+If you started a rebase and want to cancel it:
+
+git rebase --abort
+
+
+23. CANCEL A MERGE
+------------------
+
+If a merge is in progress and you want to cancel it:
+
+git merge --abort
+
+
+24. RESET COMMANDS — USE WITH CARE
+-----------------------------------
+
+Unstage changes while keeping the files:
+
+git reset
+
+Reset one file from the staging area:
+
+git reset filename.py
+
+Soft reset the previous commit while keeping changes:
+
+git reset --soft HEAD~1
+
+Mixed reset to the previous commit:
+
+git reset HEAD~1
+
+WARNING:
+Avoid git reset --hard unless you fully understand it because it can
+permanently delete local uncommitted changes.
+
+
+25. VIEW REMOTE AND LOCAL BRANCH INFORMATION
+--------------------------------------------
+
+Show all branches:
+
+git branch -a
+
+Show current branch:
+
+git branch --show-current
+
+Show remote:
+
+git remote -v
+
+Show repository status:
+
+git status
+
+
+26. TAGGING A VERSION
+---------------------
+
+Create a tag:
+
+git tag v1.0.0
+
+List tags:
+
+git tag
+
+Push a tag:
+
+git push origin v1.0.0
+
+Push all tags:
+
+git push --tags
+
+Example:
+
+git tag v1.0.0
+git push origin v1.0.0
+
+
+27. STASH TEMPORARY CHANGES
+---------------------------
+
+Temporarily save uncommitted changes:
+
+git stash
+
+Show stashes:
+
+git stash list
+
+Restore the latest stash:
+
+git stash pop
+
+Apply a stash without removing it:
+
+git stash apply
+
+Delete the latest stash:
+
+git stash drop
+
+
+28. SEARCH COMMIT HISTORY
+-------------------------
+
+Search commits by message:
+
+git log --oneline --grep="automation"
+
+Show details of a commit:
+
+git show COMMIT_ID
+
+
+29. COMPARE LOCAL AND REMOTE
+----------------------------
+
+Download remote information:
+
+git fetch origin
+
+Compare local main with remote main:
+
+git diff main origin/main
+
+See commits that exist on remote but not locally:
+
+git log main..origin/main --oneline
+
+See commits that exist locally but not on remote:
+
+git log origin/main..main --oneline
+
+
+30. GITHUB REPOSITORY SETUP — COMPLETE EXAMPLE
+----------------------------------------------
+
+Open PowerShell or Command Prompt inside the project folder.
+
+git init
+
+git remote add origin https://github.com/dibyendu-barman/Python-Automation.git
+
+git remote -v
+
+git branch -M main
+
+git fetch origin
+
+git log --oneline --graph --all --decorate -10
+
+If the GitHub repository already has an initial README or other commit:
+
+git pull origin main --allow-unrelated-histories
+
+Check:
+
+git status
+
+Add files:
+
+git add .
+
+Commit:
+
+git commit -m "Initial commit"
+
+Push:
+
+git push -u origin main
+
+
+31. NORMAL PROJECT UPDATE — COMPLETE EXAMPLE
+--------------------------------------------
+
+When you add a new Python automation project:
+
+git pull
+
+git status
+
+git add .
+
+git commit -m "Add file organization automation"
+
+git push
+
+
+32. UPDATING .GITIGNORE — COMPLETE EXAMPLE
+-------------------------------------------
+
+Edit .gitignore.
+
+Then:
+
+git status
+
+git add .gitignore
+
+git commit -m "Update gitignore"
+
+git push
+
+
+33. ADDING A NEW PYTHON SCRIPT — COMPLETE EXAMPLE
+-------------------------------------------------
+
+Create:
+
+excel_automation.py
+
+Check:
+
+git status
+
+Stage:
+
+git add excel_automation.py
+
+Commit:
+
+git commit -m "Add Excel automation script"
+
+Push:
+
+git push
+
+
+34. GOOD COMMIT MESSAGE EXAMPLES
+--------------------------------
+
+Use clear and meaningful commit messages.
+
+Good:
+
+git commit -m "Add CSV automation"
+git commit -m "Add PDF automation"
+git commit -m "Fix Excel data validation"
+git commit -m "Update README with setup instructions"
+git commit -m "Add pytest examples"
+git commit -m "Add API automation example"
+git commit -m "Fix web scraping script"
+
+Avoid vague messages such as:
+
+git commit -m "update"
+git commit -m "changes"
+git commit -m "test"
+
+
+35. MOST IMPORTANT COMMANDS TO MEMORIZE
+---------------------------------------
+
+For everyday Python development, memorize these first:
+
+git status
+git pull
+git add .
+git commit -m "message"
+git push
+
+Basic workflow:
+
+START
+  |
+  v
+git pull
+  |
+  v
+Work on Python files
+  |
+  v
+git status
+  |
+  v
+git add .
+  |
+  v
+git commit -m "Describe the changes"
+  |
+  v
+git push
+  |
+  v
+DONE
+
+
+36. IMPORTANT FIRST-TIME COMMAND SEQUENCE
+-----------------------------------------
 
 git init
 git remote add origin https://github.com/dibyendu-barman/Python-Automation.git
 git remote -v
-git commit -m "Initial commit"
 git branch -M main
-
 git fetch origin
 git log --oneline --graph --all --decorate -10
-
 git pull origin main --allow-unrelated-histories
 git status
-
 git add .
-git commit -m "Resolve merge conflict"
+git commit -m "Initial commit"
 git push -u origin main
 
-git add .gitignore
-git commit -m "Update gitignore"
+
+37. IMPORTANT DAILY COMMAND SEQUENCE
+------------------------------------
+
+git pull
+git status
+git add .
+git commit -m "Update Python automation"
+git push
+
+
+38. IMPORTANT RULES
+------------------
+
+1. Always run git status when you are unsure about the repository state.
+
+2. Use git pull before starting work if the repository is shared or may have
+   changed on GitHub.
+
+3. Use git add before git commit.
+
+4. Use meaningful commit messages.
+
+5. Do not commit passwords, API keys, tokens or .env files.
+
+6. Use .gitignore for virtual environments, cache files, logs and secrets.
+
+7. Be careful with git restore, git reset and git reset --hard.
+
+8. If Git reports a conflict, use git status to identify the conflicted
+   files.
+
+9. After resolving a conflict, use git add and then complete the merge or
+   rebase.
+
+10. Push your commits to GitHub after completing a logical unit of work.
+
+
+39. QUICK REFERENCE
+-------------------
+
+Initialize:
+git init
+
+Connect GitHub:
+git remote add origin URL
+
+Check remote:
+git remote -v
+
+Check status:
+git status
+
+Download remote information:
+git fetch origin
+
+Update local branch:
+git pull
+
+Stage everything:
+git add .
+
+Stage one file:
+git add filename.py
+
+Commit:
+git commit -m "message"
+
+Push:
+git push
+
+First push:
+git push -u origin main
+
+History:
+git log --oneline
+
+Graph:
+git log --oneline --graph --all --decorate -10
+
+Branches:
+git branch
+
+Create and switch branch:
+git switch -c branch-name
+
+Switch branch:
+git switch main
+
+Clone:
+git clone URL
+
+Show changes:
+git diff
+
+Unstage:
+git restore --staged filename.py
+
+Restore file:
+git restore filename.py
+
+Stash:
+git stash
+
+Restore stash:
+git stash pop
+
+Abort merge:
+git merge --abort
+
+Abort rebase:
+git rebase --abort
+
+
+END OF GIT COMMANDS CHEAT SHEET
+================================
+
+Recommended for the Python-Automation GitHub project:
+Use the daily workflow:
+
+git pull
+git status
+git add .
+git commit -m "Meaningful description"
 git push
