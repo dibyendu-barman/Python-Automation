@@ -31,3 +31,7 @@ git status
 git add .
 git commit -m "Resolve merge conflict"
 git push -u origin main
+
+git add .gitignore
+git commit -m "Update gitignore"
+git push
