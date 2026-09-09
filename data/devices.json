@@ -1,28 +1,10 @@
 {
-    "devices": [
-        {
-            "name": "ESP32",
-            "tests": {
-                "voltage": "PASS",
-                "uart": "PASS",
-                "temp": "FAIL"
-            }
-        },
-        {
-            "name": "STM32",
-            "tests": {
-                "voltage": "PASS",
-                "uart": "PASS",
-                "temp": "PASS"
-            }
-        },
-        {
-            "name": "PIC16F877A",
-            "tests": {
-                "voltage": "FAIL",
-                "uart": "PASS",
-                "temp": "PASS"
-            }
-        }
-    ]
+    "project": "Device Validation",
+    "device": "ESP32",
+    "firmware": "v1.2.0",
+    "limits": {
+        "voltage_min": 3.20,
+        "voltage_max": 3.40,
+        "temperature_max": 45
+    }
 }
